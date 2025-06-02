@@ -1,0 +1,2 @@
+# project_tool_short_video_content_analysis_and_popularity_prediction
+Development of a tool for short videos content analysis and popularity prediction
