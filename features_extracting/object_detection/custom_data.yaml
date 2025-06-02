@@ -1,0 +1,24 @@
+# Dataset root directory relative to the yolov5 directory
+path: ../datasets/custom_data
+
+# Train/val/test sets: specify directories, *.txt files, or lists
+train: train # 128 images for training
+val: valid # 128 images for validation
+test: test # Optional path to test images
+
+# Classes (example using 80 COCO classes)
+names:
+    0: text_on_picutre
+
+augmentation:
+  # Базовые аугментации
+  hsv_h: 0.015
+  hsv_s: 0.7
+  hsv_v: 0.4
+  translate: 0.1
+  scale: 0.9       # Уменьшите, если объекты крупные (чтобы не обрезались)
+  fliplr: 0.5
+  flipud: 0.1      # Вертикальное отражение (если актуально)
+  mosaic: 1.0      # Критично для мелких объектов!
+  mixup: 0.1       # Лучше не больше 0.2 для 64 классов
+  copy_paste: 0.1  # Полезно для мелких объектов (если не мешает логике данных)

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Analysis Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .result-container {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .views-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin: 20px 0;
+        }
+        .parameters {
+            margin-top: 30px;
+            text-align: left;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .parameter-item {
+            margin-bottom: 10px;
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .back-button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Video Performance Prediction</h1>
+        <p>Estimated number of views for the video:</p>
+        
+        <div class="views-number">
+            {{ "{:,}".format(estimated_views) }}
+        </div>
+        
+        <div class="parameters">
+            <h3>Parameters used:</h3>
+            <div class="parameter-item"><strong>Author Verified:</strong> {{ parameters.author_verified }}</div>
+            <div class="parameter-item"><strong>Author Followers:</strong> {{ parameters.author_followers }}</div>
+            <div class="parameter-item"><strong>Video Topic:</strong> {{ parameters.video_topic }}</div>
+            <div class="parameter-item"><strong>Has Subtitles:</strong> {{ parameters.has_subtitles }}</div>
+            <div class="parameter-item"><strong>Planned Publication:</strong> {{ parameters.publish_datetime.replace('T', ' ') }}</div>
+        </div>
+        
+        <a href="/" class="back-button">Analyze Another Video</a>
+    </div>
+</body>
+</html>
